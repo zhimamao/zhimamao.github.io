@@ -29,13 +29,11 @@ npm install -g hexo-cli
 **配置密钥**<font color = red>(意思是当你每次从本地上传东西时不用再输入一遍账号密码)
 
 <font color = blue>右键git bash输入 </font> 
-<html>
-    <head>
-        git config --global user.name "你的GitHub用户名"
-        git config --global user.email "你的GitHub注册邮箱"
-    </head>
-<html>
 
+```
+        git config --global user.name "你的GitHub用户名" 
+        git config --global user.email "你的GitHub注册邮箱"
+```
 
 <font color = blue>生成ssh密钥文件</font> 
 ssh-keygen -t rsa -C "你的GitHub注册邮箱"
