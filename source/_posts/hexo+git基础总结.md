@@ -8,31 +8,42 @@ tags:
 
 ---
 喵
+
+----------------------------------------------
+<table><tr><td bgcolor=white>
+本文主要适用于要在两台以上电脑设备使用一个github账号编辑同一个Hexo博客的同步和配置基础
+</td></tr></table>
 ------------------------------------
 **准备a.新建一个文件夹 比如blog**
 
-<table><tr><td bgcolor=yellow>在此处执行安装Hexo的基本操作</td></tr></table>
-1.安装nodejs 
+<table><tr><td bgcolor=yellow>在此处执行单一电脑安装Hexo的基本操作</td></tr></table>
+1.安装nodejs <https://nodejs.org/en/download/>
+
 此处会自动将npm一起安装
 
 2.安装npm-Hexo  
 npm install -g hexo-cli 
 
-3.安装git [git链接](https://git-scm.com/download/win)(创建账号创建新的库省略)
+3.安装git [git链接](https://git-scm.com/download/win)(github创建账号创建新的库省略)
 
 **配置密钥**<font color = red>(意思是当你每次从本地上传东西时不用再输入一遍账号密码)
 
-<font color = blue>右键git bash输入  
-git config --global user.name "你的GitHub用户名"
-git config --global user.email "你的GitHub注册邮箱"
+<font color = blue>右键git bash输入 </font> 
+<html>
+    <head>
+        git config --global user.name "你的GitHub用户名"
+        git config --global user.email "你的GitHub注册邮箱"
+    </head>
+<html>
 
-<font color = blue>生成ssh密钥文件
+
+<font color = blue>生成ssh密钥文件</font> 
 ssh-keygen -t rsa -C "你的GitHub注册邮箱"
 然后直接三个回车即可，默认不需要设置密码
 然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制
 <font color = red>地址理论上在c-用户-username-.ssh-id_rsa.pub里</font>
 打开GitHub_Settings_keys 页面，新建new SSH Key<https://github.com/settings/keys>
-可ssh git@github.com自行检验是否连接成功
+可用 ssh git@github.com 自行检验是否连接成功
 
 --------------------------------------
 # 1. Hexo 多台电脑同步问题
@@ -67,7 +78,7 @@ branch: master</font>
 参考如下：
 分支名为 你新创的名字
 
-5.装连接git插件
+- 装连接git插件
 npm install hexo-deployer-git --save
 
 
