@@ -8,7 +8,7 @@ tags:
 
 ---
 喵
-！[miao](./hexo%2Bgit%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/tuchuang.jpg)
+！[miao](./hexo%2Bgit%E5%9C%A8%E7%BA%BF%E5%9B%BE%E5%BA%8A/tuchuang.jpg)
 
 -----------------------------------
 # 图床是什么
