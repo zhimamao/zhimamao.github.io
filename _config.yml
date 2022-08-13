@@ -104,4 +104,4 @@ theme: cyanstyle
 deploy:
   type: 'git'
   repo: git@github.com:zhimamao/zhimamao.github.io.git
-  brauch: source
+  brauch: master
