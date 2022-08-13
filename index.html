@@ -189,7 +189,7 @@
 
     <div class="entry-content">
       
-        <p>喵</p>
+        <p>喵<br><img src="/2022/08/12/hexo+git%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220813230711.jpg" alt="miao"></p>
 <hr>
 <table><tr><td bgcolor="white">
 本文主要适用于要在两台以上电脑设备使用一个github账号编辑同一个Hexo博客的同步和配置基础
@@ -198,47 +198,63 @@
 **准备a.新建一个文件夹 比如blog**
 
 <table><tr><td bgcolor="yellow">在此处执行单一电脑安装Hexo的基本操作</td></tr></table>
-1.安装nodejs <https: nodejs.org en download>
+1.安装nodejs
+<https: nodejs.org en download>
+此处会自动将npm一起安装
 
-<p>此处会自动将npm一起安装</p>
-<p>2.安装npm-Hexo<br>npm install -g hexo-cli </p>
+<p>2.安装npm-Hexo </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
+
 <p>3.安装git <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">git链接</a>(github创建账号创建新的库省略)</p>
 <p><strong>配置密钥</strong><font color="red">(意思是当你每次从本地上传东西时不用再输入一遍账号密码)</font></p>
 <p><font color="blue">右键git bash输入 </font> </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot; </span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
 
-<p><font color="blue">生成ssh密钥文件</font><br>ssh-keygen -t rsa -C “你的GitHub注册邮箱”<br>然后直接三个回车即可，默认不需要设置密码<br>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制<br><font color="red">地址理论上在c-用户-username-.ssh-id_rsa.pub里</font><br>打开GitHub_Settings_keys 页面，新建new SSH Key<a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a><br>可用 ssh <a href="mailto:&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#x6d;">&#x67;&#105;&#x74;&#64;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#111;&#x6d;</a> 自行检验是否连接成功</p>
+<p><font color="blue">生成ssh密钥文件</font> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
+
+<p>然后直接三个回车即可，默认不需要设置密码<br>然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制<br><font color="red">地址理论上在c-用户-username-.ssh-id_rsa.pub里</font><br>打开GitHub_Settings_keys 页面，新建new SSH Key<a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a><br>可用<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@github.com </span><br></pre></td></tr></table></figure><br>自行检验是否连接成功  </p>
 <hr>
 <h1 id="1-Hexo-多台电脑同步问题"><a href="#1-Hexo-多台电脑同步问题" class="headerlink" title="1. Hexo 多台电脑同步问题"></a>1. Hexo 多台电脑同步问题</h1><p><strong>主要使用分支合并方法</strong></p>
 <p><strong>准备b.对username.github.io仓库新建分支，并克隆</strong><br>(1)在Github的username.github.io仓库上新建一个xxx分支<br>(2)该仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，update保存；<br>(3)将该仓库克隆到本地，进入该username.github.io文件目录  </p>
 <hr>
-<p><strong>c.多边电脑均为 先将文件拷贝到本地仓库</strong><br>用克隆或本地从其它地方拷都可以<br>git clone <a href="mailto:&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#105;&#x74;&#x40;&#x67;&#x69;&#x74;&#x68;&#117;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>:xxx&#x2F;xxx.github.io.git(替换成你的仓库)<br><strong><font color="red">现在所有操作都在仓库文件夹里完成</font></strong></p>
+<p><strong>c.多边电脑均为 先将文件拷贝到本地仓库</strong><br><font color="blue">用克隆或本地从其它地方拷都可以 </font> </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:xxx/xxx.github.io.git(替换成你的仓库)</span><br></pre></td></tr></table></figure>
+<p><strong><font color="red">现在所有操作都在仓库文件夹里完成</font></strong></p>
 <ul>
-<li>先初始化 hexo init blog<br>hexo new test_my_site<br>hexo g<br>hexo s(可本地点击链接打开)</li>
+<li>先初始化<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">hexo new test_my_site</span><br><span class="line">hexo g </span><br><span class="line">hexo s #(可本地点击链接打开)</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>######新创建的跳过这一步########</p>
+<p>######新创建的跳过这一步##########<br>仅在本地io文件夹里有东西时使用</p>
 <ul>
-<li>把本地除了.git 的都删掉</li>
+<li>把本地除了.git 的都删掉  <ul>
+<li>如果删不掉无权限 就先去post文件夹把.md都删掉  </li>
+<li>然后把根目录.deploy_git删掉</li>
+</ul>
+</li>
 <li>把博客里其它所有复制过来，除了 <em>deploy_git</em></li>
 </ul>
 <p>###############################</p>
 <ul>
-<li><p><font color="red">改yml 中内容(翻到最后修改)</font><br><font color="blue">deploy:<br>type: git<br>repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git<br>branch: master</font><br>参考如下：<br>分支名为 你新创的名字</p>
-</li>
-<li><p>装连接git插件<br>npm install hexo-deployer-git –save</p>
-</li>
-</ul>
-<p> <strong><font color="red">现在每台电脑操作就完成了</font></strong></p>
-<hr>
-<font color="red">
-**写完文件的同步问题**
-执行git pull 同步 可本地覆盖
-如果遇到问题
+<li><font color="red">改yml 中内容(翻到最后修改)</font><font color="blue">
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br><span class="line">repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git</span><br><span class="line">branch: master</span><br><span class="line">```&lt;/font&gt;</span><br><span class="line">参考如下：</span><br><span class="line">分支名为你刚才新创的名字</span><br><span class="line"></span><br><span class="line">- 装连接git插件</span><br></pre></td></tr></table></figure>
+npm install hexo-deployer-git --save
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> **&lt;font color = red&gt;现在每台电脑操作就完成了&lt;/font&gt;**</span><br><span class="line"></span><br><span class="line">------------------------------------------------</span><br><span class="line">&lt;font color = red&gt;</span><br><span class="line"></span><br><span class="line">**写完文件的同步问题**</span><br><span class="line"></span><br><span class="line">执行git pull 同步 可本地覆盖</span><br><span class="line"></span><br><span class="line">如果遇到问题</span><br></pre></td></tr></table></figure>
 git reset --hard
 git pull
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**上传新文件到github**</span><br></pre></td></tr></table></figure>
+git add .
+git commit -m "一定要随便写个参数"
+git push
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">**hexo同步更改**</span><br></pre></td></tr></table></figure>
+hexo g -d</font></li>
+</ul>
+<pre><code class="&lt;/font&gt;">
 
-<p><strong>上传新文件到github</strong><br>git add .<br>git commit -m “一定要随便写个参数”<br>git push</p>
-<p><strong>hexo同步更改</strong><br>hexo g -d</p></font><p></p>
+
+
+
+
+</code></pre>
 </https:>
       
     </div><!-- .entry-content -->
