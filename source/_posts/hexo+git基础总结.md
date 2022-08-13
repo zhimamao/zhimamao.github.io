@@ -12,16 +12,13 @@ tags:
 **准备a.新建一个文件夹 比如blog**
 
 <table><tr><td bgcolor=yellow>在此处执行安装Hexo的基本操作</td></tr></table>
-1.安装nodejs [node](https://nodejs.org/en/download/)
-
- 此处会自动将npm一起安装
+1.安装nodejs 
+此处会自动将npm一起安装
 
 2.安装npm-Hexo  
 npm install -g hexo-cli 
 
-3.安装git [git链接](https://git-scm.com/download/win)
-
-(创建账号创建新的库省略)
+3.安装git [git链接](https://git-scm.com/download/win)(创建账号创建新的库省略)
 
 **配置密钥**<font color = red>(意思是当你每次从本地上传东西时不用再输入一遍账号密码)
 
@@ -37,41 +34,36 @@ ssh-keygen -t rsa -C "你的GitHub注册邮箱"
 打开GitHub_Settings_keys 页面，新建new SSH Key<https://github.com/settings/keys>
 可ssh git@github.com自行检验是否连接成功
 
---------------------------------
+--------------------------------------
 # 1. Hexo 多台电脑同步问题
  
 **主要使用分支合并方法**
 
-**准备a.对username.github.io仓库新建分支，并克隆**
-(1)在Github的username.github.io仓库上新建一个xxx分支
+**准备b.对username.github.io仓库新建分支，并克隆**
+(1)在Github的username.github.io仓库上新建一个xxx分支  
+(2)该仓库->Settings->Branches->Default branch中将默认分支设为xxx，update保存；  
+(3)将该仓库克隆到本地，进入该username.github.io文件目录  
 
-(2)该仓库->Settings->Branches->Default branch中将默认分支设为xxx，update保存；
-
-(3)将该仓库克隆到本地，进入该username.github.io文件目录
-
---------------------------------
-
-
+--------------------------------------------
 **c.多边电脑均为 先将文件拷贝到本地仓库**
-用克隆或本地从其它地方拷都可以
-
+用克隆或本地从其它地方拷都可以  
 git clone git@github.com:xxx/xxx.github.io.git(替换成你的仓库)
-
-**现在所有操作都在仓库文件夹里完成**
-1. 先初始化 hexo init blog
+**<font color = red>现在所有操作都在仓库文件夹里完成</font>**
+- 先初始化 hexo init blog
 hexo new test_my_site
 hexo g 
 hexo s(可本地点击链接打开)
 
 ######新创建的跳过这一步########
-2. 把本地除了.git 的都删掉
-3. 把博客里其它所有复制过来，除了 *deploy_git*
+- 把本地除了.git 的都删掉
+- 把博客里其它所有复制过来，除了 *deploy_git*
 ###############################
-4. 改yml 中内容(翻到最后修改)
-deploy:
+
+- <font color = red>改yml 中内容(翻到最后修改)</font>
+<font color = blue>deploy:
 type: git
 repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git
-branch: master
+branch: master</font>
 参考如下：
 分支名为 你新创的名字
 
@@ -81,7 +73,8 @@ npm install hexo-deployer-git --save
 
  **<font color = red>现在每台电脑操作就完成了</font>**
 
-----------------------------------
+------------------------------------------------
+<font color = red>
 **写完文件的同步问题**
 执行git pull 同步 可本地覆盖
 如果遇到问题
@@ -94,7 +87,7 @@ git commit -m "一定要随便写个参数"
 git push
 
 **hexo同步更改**
-hexo g -d
+hexo g -d</font>
 
 
 
