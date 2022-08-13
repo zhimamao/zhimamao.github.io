@@ -12,19 +12,24 @@ tags:
 **准备a.新建一个文件夹 比如blog**
 
 <table><tr><td bgcolor=yellow>在此处执行安装Hexo的基本操作</td></tr></table>
-1.安装nodejs<https://nodejs.org/en/download/>
+1.安装nodejs [node](https://nodejs.org/en/download/)
+
  此处会自动将npm一起安装
-2.安装npm-Hexo
+
+2.安装npm-Hexo  
 npm install -g hexo-cli 
-3.安装git <https://git-scm.com/download/win>
+
+3.安装git [git链接](https://git-scm.com/download/win)
+
 (创建账号创建新的库省略)
 
-**配置密钥**(意思是当你每次从本地上传东西时不用再输入一遍账号密码)
-右键git bash输入
+**配置密钥**<font color = red>(意思是当你每次从本地上传东西时不用再输入一遍账号密码)
+
+<font color = blue>右键git bash输入  
 git config --global user.name "你的GitHub用户名"
 git config --global user.email "你的GitHub注册邮箱"
 
-生成ssh密钥文件
+<font color = blue>生成ssh密钥文件
 ssh-keygen -t rsa -C "你的GitHub注册邮箱"
 然后直接三个回车即可，默认不需要设置密码
 然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制
@@ -43,6 +48,7 @@ ssh-keygen -t rsa -C "你的GitHub注册邮箱"
 (2)该仓库->Settings->Branches->Default branch中将默认分支设为xxx，update保存；
 
 (3)将该仓库克隆到本地，进入该username.github.io文件目录
+
 --------------------------------
 
 
@@ -73,7 +79,7 @@ branch: master
 npm install hexo-deployer-git --save
 
 
- **现在每台电脑操作就完成了**
+ **<font color = red>现在每台电脑操作就完成了</font>**
 
 ----------------------------------
 **写完文件的同步问题**
