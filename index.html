@@ -121,7 +121,24 @@
 
 
 
-
+if theme.gitalk
+    if theme.gitalk.enable == true
+        a#comments
+        #vcomments(style="margin:0 30px;")
+        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css')
+        script(src='https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/blueimp-md5@2.19.0/js/md5.min.js')
+        script.
+            var gitalk = new Gitalk({
+                clientID: '#{theme.gitalk.client_id}',
+                clientSecret: '#{theme.gitalk.client_secret}',
+                owner: '#{theme.gitalk.owner}',
+                repo: '#{theme.gitalk.repo}',
+                admin: ['#{theme.gitalk.admin}'],
+                id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render('vcomments')
 
   
     <article id="post-hexo+gittuchuang" class="post-hexo+gittuchuang post type-post status-publish format-standard hentry">
@@ -197,7 +214,24 @@
 
 
 
-
+if theme.gitalk
+    if theme.gitalk.enable == true
+        a#comments
+        #vcomments(style="margin:0 30px;")
+        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css')
+        script(src='https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/blueimp-md5@2.19.0/js/md5.min.js')
+        script.
+            var gitalk = new Gitalk({
+                clientID: '#{theme.gitalk.client_id}',
+                clientSecret: '#{theme.gitalk.client_secret}',
+                owner: '#{theme.gitalk.owner}',
+                repo: '#{theme.gitalk.repo}',
+                admin: ['#{theme.gitalk.admin}'],
+                id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render('vcomments')
 
   
     <article id="post-Datenkomm总结" class="post-Datenkomm总结 post type-post status-publish format-standard hentry">
@@ -249,7 +283,24 @@
 
 
 
-
+if theme.gitalk
+    if theme.gitalk.enable == true
+        a#comments
+        #vcomments(style="margin:0 30px;")
+        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css')
+        script(src='https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/blueimp-md5@2.19.0/js/md5.min.js')
+        script.
+            var gitalk = new Gitalk({
+                clientID: '#{theme.gitalk.client_id}',
+                clientSecret: '#{theme.gitalk.client_secret}',
+                owner: '#{theme.gitalk.owner}',
+                repo: '#{theme.gitalk.repo}',
+                admin: ['#{theme.gitalk.admin}'],
+                id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render('vcomments')
 
   
     <article id="post-gugu" class="post-gugu post type-post status-publish format-standard hentry">
@@ -301,7 +352,24 @@
 
 
 
-
+if theme.gitalk
+    if theme.gitalk.enable == true
+        a#comments
+        #vcomments(style="margin:0 30px;")
+        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css')
+        script(src='https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/blueimp-md5@2.19.0/js/md5.min.js')
+        script.
+            var gitalk = new Gitalk({
+                clientID: '#{theme.gitalk.client_id}',
+                clientSecret: '#{theme.gitalk.client_secret}',
+                owner: '#{theme.gitalk.owner}',
+                repo: '#{theme.gitalk.repo}',
+                admin: ['#{theme.gitalk.admin}'],
+                id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render('vcomments')
 
   
     <article id="post-hexo+git基础总结" class="post-hexo+git基础总结 post type-post status-publish format-standard hentry">
@@ -417,7 +485,24 @@ hexo g -d</font></li>
 
 
 
-
+if theme.gitalk
+    if theme.gitalk.enable == true
+        a#comments
+        #vcomments(style="margin:0 30px;")
+        link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css')
+        script(src='https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/blueimp-md5@2.19.0/js/md5.min.js')
+        script.
+            var gitalk = new Gitalk({
+                clientID: '#{theme.gitalk.client_id}',
+                clientSecret: '#{theme.gitalk.client_secret}',
+                owner: '#{theme.gitalk.owner}',
+                repo: '#{theme.gitalk.repo}',
+                admin: ['#{theme.gitalk.admin}'],
+                id: md5(location.pathname),      // Ensure uniqueness and length less than 50
+                distractionFreeMode: false  // Facebook-like distraction free mode
+            })
+            gitalk.render('vcomments')
 
   
   
