@@ -54,7 +54,6 @@ npm install live2d-widget-model-hijiki
 
 **完成**
 
-{% aplayer "Caffeine" "Jeff Williams" "caffeine.mp3" "picture.jpg" "lrc:caffeine.txt" %}
 
 --------------------------------------------------------
 

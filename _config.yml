@@ -117,36 +117,45 @@ live2d:
     show: false
 
 aplayer:
-  global: true
-  meting: true
-  # https://github.com/metowolf/MetingJS/tree/v1.2#option
-  widget:
-    enable: false
-    autoplay: false
-    # theme: "#2980b9"
-    loop: all
-    order: list
-    preload: auto
-    volume: 0.7
-    mutex: true
-    lrcType: 0
-    listFolded: false
-    listMaxHeight: 340px
-    audio:
-      - name: 星宿计时
-        artist: 杉田朗/洛天依
-        url: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/audio/star-timer.mp3
-        cover: https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/bg/stars-timing-0.jpg
-    meting:
-      enable: true
-      id: 308168565
-      server: netease
-      type: playlist
+  script_dir: some/place                        # Public 目录下脚本目录路径，默认: 'assets/js'
+  style_dir: some/place                         # Public 目录下样式目录路径，默认: 'assets/css'
+  cdn: http://xxx/aplayer.min.js                # 引用 APlayer.js 外部 CDN 地址 (默认不开启)
+  style_cdn: http://xxx/aplayer.min.css         # 引用 APlayer.css 外部 CDN 地址 (默认不开启)
+  meting: true                                  # MetingJS 支持
+  meting_api: http://xxx/api.php                # 自定义 Meting API 地址
+  meting_cdn: http://xxx/Meing.min.js           # 引用 Meting.js 外部 CDN 地址 (默认不开启)
+  asset_inject: true                            # 自动插入 Aplayer.js 与 Meting.js 资源脚本, 默认开启
+  externalLink: http://xxx/aplayer.min.js       # 老版本参数，功能与参数 cdn 相同
 
-wordcloud:
+post_wordcount:
+  date: true # 发布日期
+  update: true # 更新日期
+  wordCount: true # 文章字数统计
+  totalCount: true # 站点总文章字数
+  min2read: true # 文章阅读时长
+  readCount: true # 文章阅读次数
+
+githubEmojis:
   enable: true
-  height: 350
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
 
+# 是否在首页显示音乐.
+music:
+  enable: true
+  showTitle: false
+  title: 听听音乐
+  fixed: false # 是否开启吸底模式
+  autoplay: false # 是否自动播放
+  theme: '#42b983'
+  loop: 'all' # 音频循环播放, 可选值: 'all', 'one', 'none'
+  order: 'list' # 音频循环顺序, 可选值: 'list', 'random'
+  preload: 'auto' # 预加载，可选值: 'none', 'metadata', 'auto'
+  volume: 0.7 # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  listFolded: false # 列表默认折叠
+  listMaxHeight: # 列表最大高度
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
