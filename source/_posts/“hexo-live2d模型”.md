@@ -3,6 +3,8 @@ title: “hexo+live2d模型”
 date: 2022-08-15 10:30:49
 categories : 
 - hexo
+aplayer: true
+
 
 ---
 ![miao](./%E2%80%9Chexo-live2d%E6%A8%A1%E5%9E%8B%E2%80%9D/a.jpg)
@@ -28,6 +30,7 @@ npm install live2d-widget-model-hijiki
 
  然后需要在npm注册一个账号将你的新文件发布（npm publisch)
 
+
  ## 配置
  在根目录的  _config.yml  文件中
 ```
@@ -50,3 +53,18 @@ npm install live2d-widget-model-hijiki
 ```
 
 **完成**
+
+{% aplayer "Caffeine" "Jeff Williams" "caffeine.mp3" "picture.jpg" "lrc:caffeine.txt" %}
+
+--------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
