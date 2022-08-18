@@ -120,7 +120,7 @@ hexo new test_my_site
 hexo g 
 hexo s #(可本地点击链接打开)
 ```
-如果有出现local---4000 网站 则成功
+如果有出现http://localhost:4000/ 网站 则成功
 
 --------------------------------------------------
 ## hexo 博客连接git的基本设置
@@ -221,7 +221,33 @@ hexo n xxx(文章名)
 
 地址在scoure-post 下
 
+7.解决 Hexo Cannot find module 错误
+重装hexo 
+```
+ npm uninstall hexo-cli -g
+ npm install hexo-cli -g
 
+```
+
+8.ERROR Plugin load failed: hexo-server 错误
+```
+hexo clean
+rm -rf node_modules
+```
+安装yarn
+```
+npm install --global yarn
+yarn upgrade
+
+```
+
+9.WARN  No layout: index.html 错误
+
+在克隆以后发现主题文件夹thema下只有主题名字 没有东西
+
+主题文件没有提交到git上去，就只能再重新下载一下主题文件了
+
+1
 
 
 
