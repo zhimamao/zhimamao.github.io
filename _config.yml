@@ -116,6 +116,7 @@ live2d:
   mobile:
     show: false
 
+hexo-tag-aplayer:
 aplayer:
   script_dir: some/place                        # Public 目录下脚本目录路径，默认: 'assets/js'
   style_dir: some/place                         # Public 目录下样式目录路径，默认: 'assets/css'
@@ -163,3 +164,16 @@ deploy:
   type: 'git'
   repo: git@github.com:zhimamao/zhimamao.github.io.git
   brauch: source
+
+math:
+  engine: 'mathjax'
+  mathjax:
+
+# on _config.yml of hexo-site
+hexo-tag-dplayer:
+  js_path: /path/to/your/default/path
+  css_path: /sth
+  default: #default tag argument 
+    id: somedefid # equals to setting id=somedefid in all {%dplayer%} tags
+    api: https://api.prprpr.me/dplayer/
+    #and other options...
