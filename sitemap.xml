@@ -128,15 +128,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/08/12/hhu/hhu_datenscience/3.%E7%AE%80%E4%BB%8B%20%20python/</loc>
-    
-    <lastmod>2022-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/2022/08/12/hhu/hhu_datenscience/5.%E7%A8%8B%E5%BC%8F%E5%8C%96%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%80%A7/</loc>
     
     <lastmod>2022-10-01</lastmod>
@@ -182,7 +173,16 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/08/12/hhu/hhu_datenscience/2.%E7%AE%80%E4%BB%8BEinf%C3%BChrung%20in%20Stochastik%20/</loc>
+    <loc>http://example.com/2022/08/12/hhu/hhu_datenscience/2.%E7%AE%80%E4%BB%8B%20Einf%C3%BChrung%20in%20Stochastik/</loc>
+    
+    <lastmod>2022-10-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/08/12/hhu/hhu_datenscience/3.%E7%AE%80%E4%BB%8B%20python/</loc>
     
     <lastmod>2022-10-01</lastmod>
     
