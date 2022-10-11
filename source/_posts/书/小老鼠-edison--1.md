@@ -1,6 +1,9 @@
 ---
 title: 小老鼠--edison--1
 date: 2022-10-01 10:49:01
+categories :
+  - 书
+  - 小老鼠-edison
 tags: 书
 ---
 # Das Ratsel des verschollenen Mauseschatzes
