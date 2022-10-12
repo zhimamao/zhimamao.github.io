@@ -1,0 +1,5 @@
+from sklearn.datasets import load_boston
+boston = load_boston()
+
+import numpy as np
+data = np.genfromtxt('ex4_3.txt')
