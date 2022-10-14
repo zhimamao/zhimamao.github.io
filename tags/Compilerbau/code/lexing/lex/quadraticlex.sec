@@ -1,0 +1,15 @@
+%{
+#include <stdio.h>
+int atokens = 0;
+int btokens = 0;
+%}
+
+%%
+a	atokens++;
+a*b btokens++;
+c   printf("c, atokens=%d, btokens =%d\n",atokens,btokens);
+%%
+
+int main (void) {yylex(); return 0;}
+
+int yywrap (void) {return 1;}

@@ -68,6 +68,263 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-hexo/hexo+git基础总结" class="post-hexo/hexo+git基础总结 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2022/08/12/hexo/hexo+git%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/">Hexo 多台电脑配置+github基础</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://example.com/2022/08/12/hexo/hexo+git%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/" data-id="cl91qyyzz000908vfeyf6c1qp" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>喵<br><img src="/2022/08/12/hexo/hexo+git%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220813230711.jpg" alt="miao"></p>
+<table><tbody><tr><td bgcolor="white">
+本文主要适用于要在两台以上电脑设备使用一个github账号编辑同一个Hexo博客的同步和配置基础
+</td></tr></tbody></table>
+
+<hr>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ol>
+<li><a href="#1">每台电脑都要执行的准备操作</a></li>
+<li><a href="#2">第一台电脑的初始创建工作</a></li>
+<li><a href="#3">其它电脑的同步操作</a></li>
+<li><a href="#4">Hexo 的基本用法和其中遇到的问题</a></li>
+</ol>
+<hr>
+<div id="1"></div>
+<table><tbody><tr><td bgcolor="yellow">每台电脑都要执行的基本操作</td></tr></tbody></table>
+
+* 准备a.新建一个文件夹 比如blog**
+
+1.安装nodejs
+<https: nodejs.org="" en="" download="">
+此处会自动将npm一起安装
+
+2.安装git [git链接](https://git-scm.com/download/win)(github创建账号创建新的库省略)
+
+3.安装npm-Hexo 
+
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></tbody></table></figure>
+
+
+
+**配置密钥**<font color="red">(意思是当你每次从本地上传东西时不用再输入一遍账号密码)</font>
+
+<font color="blue">右键git bash输入 </font> 
+
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "你的GitHub用户名" </span><br><span class="line">git config --global user.email "你的GitHub注册邮箱"</span><br></pre></td></tr></tbody></table></figure>
+
+<font color="blue">生成ssh密钥文件</font> 
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "你的GitHub注册邮箱"</span><br></pre></td></tr></tbody></table></figure>
+
+然后直接三个回车即可，默认不需要设置密码  
+然后找到生成的.ssh的文件夹中的id_rsa.pub密钥，将内容全部复制  
+<font color="red">地址理论上在c-用户-username-.ssh-id_rsa.pub里</font>  
+打开GitHub_Settings_keys 页面，新建new SSH Key<https: github.com="" settings="" keys="">  
+可用
+ <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@github.com </span><br></pre></td></tr></tbody></table></figure>
+自行检验是否连接成功  
+
+--------------------------------------
+
+# 1. Hexo 多台电脑同步问题
+
+**主要使用分支合并方法**
+
+<div id="2"></div>
+
+<ul>
+<li><table><tbody><tr><td bgcolor="yellow">仅在第一台需要创建初始博客的电脑进行一下操作</td></tr></tbody></table>
+
+</li>
+</ul>
+<hr>
+<h2 id="a-先创建一个新的仓库"><a href="#a-先创建一个新的仓库" class="headerlink" title="a.先创建一个新的仓库"></a>a.先创建一个新的仓库</h2><p><strong>名称 username.github.io</strong></p>
+<p>注意 <font color="red">新建的仓库名字一定要和你的用户名相同</font>  </p>
+<hr>
+<h2 id="b-在Github的username-github-io仓库上新建一个xxx-比如main-分支"><a href="#b-在Github的username-github-io仓库上新建一个xxx-比如main-分支" class="headerlink" title="b.在Github的username.github.io仓库上新建一个xxx(比如main)分支"></a>b.在Github的username.github.io仓库上新建一个xxx(比如main)分支</h2><hr>
+<h2 id="c-该仓库-gt-Settings-gt-Branches-gt-Default-branch中将默认分支设为xxx，update保存；"><a href="#c-该仓库-gt-Settings-gt-Branches-gt-Default-branch中将默认分支设为xxx，update保存；" class="headerlink" title="c.该仓库->Settings->Branches->Default branch中将默认分支设为xxx，update保存；"></a>c.该仓库-&gt;Settings-&gt;Branches-&gt;Default branch中将默认分支设为xxx，update保存；</h2><hr>
+<h2 id="d-将该仓库克隆到本地-上面创建的blog文件夹里"><a href="#d-将该仓库克隆到本地-上面创建的blog文件夹里" class="headerlink" title="d.将该仓库克隆到本地(上面创建的blog文件夹里)"></a>d.将该仓库克隆到本地(上面创建的blog文件夹里)</h2>  <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:xxx/xxx.github.io (替换成你的仓库)</span><br></pre></td></tr></tbody></table></figure>
+<hr>
+<h2 id="e-进入xxx-github-io-文件夹"><a href="#e-进入xxx-github-io-文件夹" class="headerlink" title="e.进入xxx.github.io 文件夹"></a>e.进入xxx.github.io 文件夹</h2><h1 id="现在所有操作都在仓库文件夹里完成"><a href="#现在所有操作都在仓库文件夹里完成" class="headerlink" title="现在所有操作都在仓库文件夹里完成"></a><strong><font color="red">现在所有操作都在仓库文件夹里完成</font></strong></h1><p><strong>首先检查文件夹是否里面有且只有.git</strong></p>
+<hr>
+<h2 id="初始化博客文件"><a href="#初始化博客文件" class="headerlink" title="初始化博客文件"></a>初始化博客文件</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br><span class="line">hexo new test_my_site</span><br><span class="line">hexo g </span><br><span class="line">hexo s #(可本地点击链接打开)</span><br></pre></td></tr></tbody></table></figure>
+<p>如果有出现<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 网站 则成功</p>
+<hr>
+<h2 id="hexo-博客连接git的基本设置"><a href="#hexo-博客连接git的基本设置" class="headerlink" title="hexo 博客连接git的基本设置"></a>hexo 博客连接git的基本设置</h2><ol>
+<li><font color="red">改yml 中内容(翻到最后修改)</font>
+
+
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type: git</span><br><span class="line">repo: 这里填入你之前在GitHub上创建仓库的完整路径，记得加上 .git</span><br><span class="line">branch: main</span><br></pre></td></tr></tbody></table></figure>
+<p>注意:</p>
+<pre><code>a. 分支名为你刚才新创的名字
+b. repo中为 git@github.com:xxx/xxx.github.io.git
+</code></pre><ol>
+<li>装连接git插件<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+<p>现在第一台电脑配置完成</p>
+<hr>
+<div id="3"></div>
+
+<h2 id="下面是第二台电脑的配置"><a href="#下面是第二台电脑的配置" class="headerlink" title="下面是第二台电脑的配置"></a><table><tbody><tr><td bgcolor="yellow">下面是第二台电脑的配置</td></tr></tbody></table></h2><ol>
+<li><p>新建blog 本地文件夹</p>
+</li>
+<li><p>执行上面的三个程序安装 :git(和密钥配置)， nodejs，hexo</p>
+</li>
+</ol>
+<ul>
+<li>注意检查是否均为最新版本 </li>
+</ul>
+<ol>
+<li>clone 到本地<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:xxx/xxx.github.io.git</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>装连接git插件</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>同步</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure>
+<p><strong><font color="red">现在每台电脑操作就完成了</font></strong></p>
+</li>
+</ol>
+<hr>
+<div id="4"></div>
+
+<ol>
+<li>如果你在拷贝文件到第二台电脑时不时用的clone而是直接硬盘拷贝的<br>需要</li>
+</ol>
+<ul>
+<li>把本地除了.git 的都删掉  <ul>
+<li>如果删不掉无权限 就先去post文件夹把.md都删掉  </li>
+<li>然后把根目录.deploy_git删掉</li>
+</ul>
+</li>
+<li>把博客里其它所有复制过来，除了 <em>deploy_git</em></li>
+</ul>
+<p><strong>写完文件的同步问题</strong></p>
+<ol>
+<li>每次在开始之前工作/写文章之前 都必须执行执行git pull 同步 </li>
+</ol>
+<p>如果遇到问题<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard</span><br><span class="line">git pull</span><br></pre></td></tr></tbody></table></figure><p></p>
+<ol>
+<li><p><strong>上传新文件到github</strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m "一定要随便写个参数"</span><br><span class="line">git push</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p><strong>hexo同步更改</strong></p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clan</span><br><span class="line">hexo g -d</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+<p>5.hexo 本地预览<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>6.hexo 新建文章<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo n xxx(文章名)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>地址在scoure-post 下</p>
+<p>7.解决 Hexo Cannot find module 错误<br>重装hexo<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-cli -g</span><br><span class="line">npm install hexo-cli -g</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>8.ERROR Plugin load failed: hexo-server 错误<br></p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">rm -rf node_modules</span><br></pre></td></tr></tbody></table></figure><br>安装yarn<br><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --global yarn</span><br><span class="line">yarn upgrade</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>9.WARN  No layout: index.html 错误</p>
+<p>在克隆以后发现主题文件夹thema下只有主题名字 没有东西</p>
+<p>主题文件没有提交到git上去，就只能再重新下载一下主题文件了</p>
+<p>1</p>
+</https:></https:>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2022/08/12/hexo/hexo+git%E5%9F%BA%E7%A1%80%E6%80%BB%E7%BB%93/">
+    <time datetime="2022-08-12T20:44:45.000Z" class="entry-date">
+        2022-08-12
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/hexo/">hexo</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-高达/高达观看顺序" class="post-高达/高达观看顺序 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2022/08/12/%E9%AB%98%E8%BE%BE/%E9%AB%98%E8%BE%BE%E8%A7%82%E7%9C%8B%E9%A1%BA%E5%BA%8F/">高达观看顺序</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://example.com/2022/08/12/%E9%AB%98%E8%BE%BE/%E9%AB%98%E8%BE%BE%E8%A7%82%E7%9C%8B%E9%A1%BA%E5%BA%8F/" data-id="cl91qyz08000o08vfbup6bbh2" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>|作品名 |类型   |宇宙纪年   |<br>|<a href>机动战士高达</a>       |  TV    | U:C:0079      |</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2022/08/12/%E9%AB%98%E8%BE%BE/%E9%AB%98%E8%BE%BE%E8%A7%82%E7%9C%8B%E9%A1%BA%E5%BA%8F/">
+    <time datetime="2022-08-12T20:44:45.000Z" class="entry-date">
+        2022-08-12
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/%E7%95%AA%E5%89%A7/">番剧</a>, <a class="article-category-link" href="/categories/%E7%95%AA%E5%89%A7/%E9%AB%98%E8%BE%BE/">高达</a>
+  </div>
+
+    
+    </footer>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-hhu/hhu_datenscience/1.简介 什么是Daten Science" class="post-hhu/hhu_datenscience/1.简介 什么是Daten Science post type-post status-publish format-standard hentry">
     <!---->
 
@@ -524,120 +781,6 @@
 
 
   
-    <article id="post-hhu/hhu_machinelearning/vorlesung/1-22-10-11/1-初见" class="post-hhu/hhu_machinelearning/vorlesung/1-22-10-11/1-初见 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2022/08/12/hhu/hhu_machinelearning/vorlesung/1-22-10-11/1-%E5%88%9D%E8%A7%81/">machine-learning-1.初见</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://example.com/2022/08/12/hhu/hhu_machinelearning/vorlesung/1-22-10-11/1-%E5%88%9D%E8%A7%81/" data-id="cl94hv59v0009lovffwbr6y8d" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        Here's something encrypted, password is required to continue reading.
-        
-          <p class="article-more-link">
-            <a href="/2022/08/12/hhu/hhu_machinelearning/vorlesung/1-22-10-11/1-%E5%88%9D%E8%A7%81/#more" class="more-link">More <span class="meta-nav">→</span></a>
-          </p>
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2022/08/12/hhu/hhu_machinelearning/vorlesung/1-22-10-11/1-%E5%88%9D%E8%A7%81/">
-    <time datetime="2022-08-12T20:44:45.000Z" class="entry-date">
-        2022-08-12
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/hhu/">hhu</a>, <a class="article-category-link" href="/categories/hhu/machine-learning/">machine-learning</a>
-  </div>
-
-    
-    </footer>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hhu/hhu_datenscience/2.简介 Einführung in Stochastik" class="post-hhu/hhu_datenscience/2.简介 Einführung in Stochastik post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2022/08/12/hhu/hhu_datenscience/2.%E7%AE%80%E4%BB%8B%20Einf%C3%BChrung%20in%20Stochastik/">Daten_Science 总结-2</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://example.com/2022/08/12/hhu/hhu_datenscience/2.%E7%AE%80%E4%BB%8B%20Einf%C3%BChrung%20in%20Stochastik/" data-id="cl94i5dpn0000xcvf80w10wzj" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        Here's something encrypted, password is required to continue reading.
-        
-          <p class="article-more-link">
-            <a href="/2022/08/12/hhu/hhu_datenscience/2.%E7%AE%80%E4%BB%8B%20Einf%C3%BChrung%20in%20Stochastik/#more" class="more-link">More <span class="meta-nav">→</span></a>
-          </p>
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2022/08/12/hhu/hhu_datenscience/2.%E7%AE%80%E4%BB%8B%20Einf%C3%BChrung%20in%20Stochastik/">
-    <time datetime="2022-08-12T20:44:45.000Z" class="entry-date">
-        2022-08-12
-    </time>
-</a>
-    
-  <span class="article-delim">&#8226;</span>
-  <div class="article-category">
-  <a class="article-category-link" href="/categories/hhu/">hhu</a>, <a class="article-category-link" href="/categories/hhu/Daten-Science/">Daten_Science</a>
-  </div>
-
-    
-    </footer>
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="pagination">
       <nav id="page-nav">
@@ -662,7 +805,7 @@
   <aside class="widget">
     <h3 class="widget-title">Categories</h3>
     <div class="widget-content">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/">hhu</a><span class="category-list-count">13</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/Daten-Science/">Daten_Science</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/Expmech/">Expmech</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/machine-learning/">machine-learning</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/rwth/">rwth</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/rwth/Datenkomm/">Datenkomm</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/rwth/malo/">malo</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6/">书</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6/%E5%B0%8F%E8%80%81%E9%BC%A0-edison/">小老鼠-edison</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/%E5%92%A9%E5%92%A9%E5%90%AF%E7%A4%BA%E5%BD%95/">咩咩启示录</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%95%AA%E5%89%A7/">番剧</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%95%AA%E5%89%A7/%E9%AB%98%E8%BE%BE/">高达</a><span class="category-list-count">1</span></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/">hhu</a><span class="category-list-count">15</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/Algocomplex/">Algocomplex</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/Compilerbau/">Compilerbau</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/Daten-Science/">Daten_Science</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/Expmech/">Expmech</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/machine-learning/">machine-learning</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/rwth/">rwth</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/rwth/Datenkomm/">Datenkomm</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/rwth/malo/">malo</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6/">书</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6/%E5%B0%8F%E8%80%81%E9%BC%A0-edison/">小老鼠-edison</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/%E5%92%A9%E5%92%A9%E5%90%AF%E7%A4%BA%E5%BD%95/">咩咩启示录</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%95%AA%E5%89%A7/">番剧</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%95%AA%E5%89%A7/%E9%AB%98%E8%BE%BE/">高达</a><span class="category-list-count">1</span></li></ul></li></ul>
     </div>
   </aside>
 
@@ -674,6 +817,14 @@
       <ul>
         
           <li>
+            <a href="/2022/10/14/hhu/hhu_algokox/vorlesung/60Turingmachine/">vorlesung1</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/14/hhu/hhu_compilerbau/vorlesung1/v1/">vorlesung1</a>
+          </li>
+        
+          <li>
             <a href="/2022/10/13/hhu/hhu_expmech/vorlesung/vorlesung2-10-13/">vorlesung2</a>
           </li>
         
@@ -683,14 +834,6 @@
         
           <li>
             <a href="/2022/10/12/%E4%B9%A6/%E5%B0%8F%E8%80%81%E9%BC%A0-edison/%E5%B0%8F%E8%80%81%E9%BC%A0-edison--5/">小老鼠--edison--5</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/11/rwth/Datenkomm/Datenkomm-yezi%E6%80%BB%E7%BB%93/">Datenkomm-yezi 总结</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/11/%E4%B9%A6/%E5%B0%8F%E8%80%81%E9%BC%A0-edison/%E5%B0%8F%E8%80%81%E9%BC%A0-edison--4/">小老鼠--edison--4</a>
           </li>
         
       </ul>

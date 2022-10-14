@@ -1,0 +1,25 @@
+/* 
+
+lex simple.lex
+gcc lex.yy.c -o lexer.out
+echo "start (12345 IF) stop iF" | ./lexer.out
+./lexer.out < input.txt
+
+*/
+
+%{
+#include <stdio.h>
+%}
+
+%%
+stop    printf("Stop command received\n");
+start   printf("Start command received\n");
+IF      printf("IF\n");
+[0123456789]+           printf("NUMBER\n");
+[a-zA-Z][a-zA-Z0-9]*    printf("WORD\n");
+[()] printf("BRACKET\n");
+%%
+
+int main (void) {yylex(); return 0;}
+
+int yywrap (void) {return 1;}
