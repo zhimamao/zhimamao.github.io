@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/6-7-22-11-2/k7/</loc>
+    
+    <lastmod>2022-11-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/6-7-22-11-2/k6/</loc>
     
     <lastmod>2022-11-02</lastmod>
