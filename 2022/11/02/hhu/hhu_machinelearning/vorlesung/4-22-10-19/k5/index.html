@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading." />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>machine-learning-voelseung5.最大似然 | 芝麻</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="machine-learning-voelseung5.最大似然">
+<meta property="og:url" content="http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k5/index.html">
+<meta property="og:site_name" content="芝麻">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-11-02T09:03:45.000Z">
+<meta property="article:modified_time" content="2022-11-02T16:02:08.496Z">
+<meta property="article:author" content="鼠鼠虎虎">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="芝麻" rel="home">芝麻</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-hhu/hhu_machinelearning/vorlesung/4-22-10-19/k5" class="post-hhu/hhu_machinelearning/vorlesung/4-22-10-19/k5 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      machine-learning-voelseung5.最大似然
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k5/" data-id="cl9zyzhoc0000f8vf475z9wvh" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="ce4293787cd21848d2b20b1ce98e6c9b205e5c6d025b4f73d88dc0e1143e29e6">94cca25c49f0c3faa5f005ffbcdb573adb344f3c68186e8c26acc8ba2449f658232b111e50cb47f660991b93e317bbee13205ae7ca61ae73386113ff4abeb34f39fe0a4dfeaf6c5b6aa4b98eb91058020b00e80761ae132277405d505fb6abee49b14bc15297585144d2697a098c15614c3c7108b0fc92a11b800bde0e9d2822efa40a1770862e56d0e38cf9586ce3e093c165530c975ba3a0dca90cfdd36498b6a4fb9922c14cd465a56d18cf26a27ec3db7d79632013d26297d24ec5be38378a5ecfaa7ee3897e70fdcb1bc51d7f939c27a73d7376fbe90f7c0c83d791525c0ff1194020dcba0aaca6bfce21a69129e666f64ccd66ee241ab6f9106633a0e559d6ce2631d505aba8ea761f979e27f77abdcff94cd1ca4d7e059ea6bfb7412b346cf1a8ce8aac234461b6fd031a8e6451aa1d96adb4e2de21c1a83e9077a95b540415e7027d9f5794479ea4896e1fafa0643a5aae28731ac2c6e6891434ed3ef575186917a5f9ee567fb1ac8f460d3cba01fab49c346dc6068e189f74812b60527705f169bb0c20be83344d6c78e6fcf08d46fac893f01230f7e149a5e202bda4bd1c37f527a9fb0fc483b3886e5525444255f3d980de15b0a74bde9fc97e21abebb8715dd9f06e6516ae1a94dc344ac0b358573f5dec8b92a7b3d7746d48f65169e031615af9c98aede6bb5179ccb932c0fedc323469424bb94450aa680b9752c9ea0c54ef2df1c0ad4e121424417bb55cdf3f52d3a4ad61fab7f2326b9a8db492842d04103f43ac3b39ff392a3e3bdf9325c497937b73cba9551035824fd723937c14f7c13806dcf1bb362b100987083a6f9de1211da79dc415ba30155b46619d39bf3709903f9727d42f7f9dc56685d0436ca925739da6542b71969fce86b0ccce1fc30c88e0d2dc02065d7df77f181789b1f9b6690b2791bd9ed8cc7fd013924a23dd20044040959b79b238a74b1fba73b1f658f5ab2f778d6649326d156f50d5e2d9894c4c6f12f17c7124234277c0a2c91e011c3b824d7df9fe2b55a3023c06446471de4e66069e272270fc982d4e8bfc131dd97e88eba53af1f5e50ce2f9f6f4640a56f910c5eb45b23d04883594958be4618cc26778870b1ab1abccafaebb66f113839589c99c8b47244debec4a567a2a207207b5c22d585a6719bf6ab1b7dbd4c9159e7a9847361ec0e8e6955f31ee81b6494a1b6d5c4a7cc9ca0307edee981c9e3b9d6cdf810458904c77f9f60ad35ffd226c012e057a0c631074a2d1966052232445d378aa025a5d7b0a110faa9858a8f73adb74a21724b4f39cdc1e387b326729e614e4aaca59dfdba0def75376c65b5151c9074270db13453d249b4e678986935fa63b3dac5baeb7cf7d5655ed7dca8853df1aa56e7637309d241413526888d655ef2a3d49753f08d25fd3f1ce345a83079f470d6d08779238a14eeb61832b38a06037964bf104d703fd6b182a3a6e268a04f1789b5811e9ae84af027bbc85d87392ce5f1c2aa07e2e289e5e8e3f281a7043c3d770ef5591eceb29d2e9809b1efe43af7d04776e3ae4bf4ad8e8ad03c34bdf3def318dc9482dac8771c95db014bc2eb48911defba8edd31ec0477aeb1355c3576fb7ce6a1b8a414a28d570b3ecbfcb08c49c6b8db695cc218507c1c10dab9317c81e19d4fc81fc5d0f174a123de35b852c2f19bfb091ecb90d156427f83137f6e1b0f082a7a8582c31943d29e88d49cc3d7cf88d8eb4bd90ca70770d5a63b5351b91af9557053ffc2aa4dd498ad483fb89453487d6cea2abb62389591e84939580f9dfd63a3a0fa823f2eac2ac42c115a107a171e1ed2ba4c33c62f2c0a9665cccffabf6a4996788b0ee40863342eba4c6682e17be23f3211dd38e48b8bdc47694449dd347f75f1c7211e86e63003fab1dc5bb9ac1b14cc1004a96688b8900f4875bc6eacc93ca06cd229dcbf3fad796e7ea0184107c881cac457d04cb106c6fd50a8499c98460fc70f58ce9301a1bf3e5ab986dace2348ea9c2d0a127fbfaa572e749ac3556541c827abe5a64e0102f0fd6ae5174448d394cabda8cbf47fb354c18e9c82739a359f2ba9944beb83ebb4cc4bd47d7444b4a9c88d148ee4b3c87121df856186d53dd3e2b3a5c576ee05b4889ddf3f0ceb38c9867aceeb459656687f6d81a4fe5a4a295b542e76ac85a853e5500b49a0bbfb95dc1dca5137bbe8a4a6495c8669e937c5a3b210fc0202ec9f6c03f75579e33cd892052a1a2a834348d8f466f7579ed365489da6919df646378330c945ab269bae20cfefeacf28042793b4bff666c20189a8b3829c6e32e12db739447f1d940539387f7446dde6eacd458ababa96758fc83036809aec7c0297a607b8afca0f4922d63fb56bb47003c683642a074d2353aae2a3c78aa1ce1bc910c8b27201b5f5241c33c593f6714d6d7d35f71900b79be83ee55711eaf8ae60fb84d8a2cee7e871b088cd6273359f03bd0f800f3a1106cc3855c5e5037a7b05111f8c9433346439f5e5288094ffbe87b727dd8bb340d790761eb9cde151a6ac8ffcd50c34ced4caffad4ef311ef9d96f3dfe931bca3a3412ff19eeade6c48583b84d62f8c0cc99b0a830012ffa70be87e2acf181bb3bed68a2595a3f48083365f9264465e956d8d8243febdc076a6bc53d1ab5be600c785b9a1e7f9732b0d0e22e5312bc7dd6dfdf6000e7ae1fc042fbf8daabb0139e899c9b5dc1afd48c36483aebec517a62350329cc801f0470fcf77b0f9d98a50f9ff960d6921dddffbd2e57993acae5d95150a4dd5c60300526499d742cb4505a435aa035a02c72c3b9e645a3b83541ab137169bd1dba15b2ce64f54b964bcde546bae8694aa3d522d7a3e41dca9c93b1ea2bb847284bd687b6da3a3bc297e690bf94be49fd2ffe85d124c49792ce141998514eb982838657d50b9e615284443781ef28a9ac2bcf7a7bd29247e53e6eaf3f3492a8d99788977c3de15d9917f83431dff13f3ff62e2954188ae02cc77a8e3982bf19b44f087d04192706ae0cd6f59161c974afb912cd5aa4fc434b25818a3dbc2f86533919dd6b2b8255d4c8f070936abe7f1ced8aa8598053b9b9030c1386344db2e528b813f099e10e091a4cf4cbb9a3a1e23b2500fd1dc910f2586bda8e78afec6fb3cb77d9968f7f3298150be7aa413fa9fd17a64d4d7e7e2a5e0a2b7b6b5e4495af317594276650addd9a09cbbf4eef1b687e3343284399ed641ac5b03a4ffe0db9ac2e1a87031aaf57aefa861369195cdd7a83cfb7ddb32b18c043b2f90b624a57856751c2b62140676848e60c892fc61a1f1e6531821cd06d4880d038eccc1bbce1b938a77b24bc1a0b36521ed8337af9e296acea48967b55f85015dad822022dbb3e1c3d55b3abd1562abb84347da4240c5c2a0c968f60fdb60cfc75c5f618fae19e021838bf16d2736ff817418250e24e7486964d0a5eaa122b02d513de678ab609f016937de9979938ab3a5c4fa94f7e4a8688eec04f9fa3d60c4813efed821671d143fc50d202739ee4c73b08e3ca4cd8b2b7ef3d280236e3ff315cea7915016819fe5e66d82e40f3ce7d5a19f1b192a86faa3156c3b20983a5ec5c08717fd28da0cbc8a1c99f1fd64aa24f15cf65455c1160afeba14b91eec55d46b2dfa0ffd62f67055e9998612d37fa171349bb4c6b224b6bc223363db18ee6214e6e21fd787378ac07afd5a27fc3e391883d4d6c5ba4c45fb511356b9ff53c5e5374ffcc60f9fd6c35ebb08da5b8065a71a4e5356d0a12c8abfb16d83965575e46a55ed5079443625f78ff96115137829d82246534f137e7e07a9f8e3f33777cffd6cc0fa3f479b39f1899104df05faf383458c8574799552ddf6456883b1423b617bff03c4ab0f6646998e4fad8691ecdeae0a01fdbb003dbcaa238abcefc5a3db2317efc5826362989b39b56562682f0e58048bd09716f82a32f3008c69f73c1ef5fee9a9bb7710c0ffe02317aa596cdb9014f73e1b70952b7a26a601ace4d188b862b915ae4ca74498f3292c27fb936855344aa3641fa9497e552155b97a7356dfcc4e7505cdf8694e8a24e259c103d0d6389824130aaad523dd53ca1232d2e88865b606d2ec84e7f97393bb2e90bec0954d65beb839758f5e4500d309e8eb96aaf5beac239ea196e8ccf2af49022be1490d5ded7a1fc16a9eabca8b20eb7bf870338f5d95d2c311468a88fa51af1bd889f4802ae72c0d614305b5e67543ec6d634f1de2f8809ce925634f441d7ff0e4fe3b3284a29e800b53640c8516de17b12bb1275479d9f06ffefbde3d3b8a0183cbd345d7c94bc9f70fc03abd67f6bcc02c24bd979e88bca3ec9199d1cc01813cc09a617365047961e8e20e161ae8ac1ef7ee98c3fa253c830b058f3bae264f3b3ab416fc0069572f627812fa59df4f4d75b940cda96940041adb6478ec73410fdbece192e9abfcabb40bf</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k5/">
+    <time datetime="2022-11-02T09:03:45.000Z" class="entry-date">
+        2022-11-02
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/hhu/">hhu</a>, <a class="article-category-link" href="/categories/hhu/machine-learning/">machine-learning</a>
+  </div>
+
+    
+    </footer>
+</article>
+
+
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2022/11/02/hhu/hhu_machinelearning/vorlesung/6-7-22-11-2/k6/" rel="prev"><span class="meta-nav">←</span> (no title)</a></span>
+    
+    
+        <span class="nav-next"><a href="/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k3-4/" rel="next">machine-learning-voelseung3-5.概率 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/">hhu</a><span class="category-list-count">16</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/Algocomplex/">Algocomplex</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/Compilerbau/">Compilerbau</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/Daten-Science/">Daten_Science</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/Expmech/">Expmech</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/hhu/machine-learning/">machine-learning</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/rwth/">rwth</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/rwth/Datenkomm/">Datenkomm</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/rwth/malo/">malo</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6/">书</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E4%B9%A6/%E5%B0%8F%E8%80%81%E9%BC%A0-edison/">小老鼠-edison</a><span class="category-list-count">3</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B8%B8%E6%88%8F/%E5%92%A9%E5%92%A9%E5%90%AF%E7%A4%BA%E5%BD%95/">咩咩启示录</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%95%AA%E5%89%A7/">番剧</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%95%AA%E5%89%A7/%E9%AB%98%E8%BE%BE/">高达</a><span class="category-list-count">1</span></li></ul></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2022/11/02/hhu/hhu_machinelearning/vorlesung/6-7-22-11-2/k6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k5/">machine-learning-voelseung5.最大似然</a>
+          </li>
+        
+          <li>
+            <a href="/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k3-4/">machine-learning-voelseung3-5.概率</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/14/hhu/hhu_algokox/vorlesung/60Turingmachine/">vorlesung1</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/14/hhu/hhu_compilerbau/vorlesung1/v1/">vorlesung1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/2022-%E7%A7%91%E9%9A%86%E6%B8%B8%E6%88%8F%E5%B1%95/" rel="tag">2022 科隆游戏展</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6/" rel="tag">书</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/" rel="tag">游戏记录</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/2022-%E7%A7%91%E9%9A%86%E6%B8%B8%E6%88%8F%E5%B1%95/" style="font-size: 10px;">2022 科隆游戏展</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/%E4%B9%A6/" style="font-size: 20px;">书</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 10px;">日常</a> <a href="/tags/%E6%B8%B8%E6%88%8F%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">游戏记录</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2022 鼠鼠虎虎
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>

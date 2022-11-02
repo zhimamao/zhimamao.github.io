@@ -1,7 +1,9 @@
+http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/6-7-22-11-2/k6/
+http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k5/
+http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k3-4/
 http://example.com/2022/10/14/hhu/hhu_algokox/vorlesung/60Turingmachine/
 http://example.com/2022/10/14/hhu/hhu_compilerbau/vorlesung1/v1/
 http://example.com/2022/10/13/hhu/hhu_expmech/vorlesung/vorlesung2-10-13/
-http://example.com/2022/10/13/hhu/hhu_machinelearning/vorlesung/2-22-10-13/k2/
 http://example.com/2022/10/12/%E4%B9%A6/%E5%B0%8F%E8%80%81%E9%BC%A0-edison/%E5%B0%8F%E8%80%81%E9%BC%A0-edison--5/
 http://example.com/2022/10/11/%E4%B9%A6/%E5%B0%8F%E8%80%81%E9%BC%A0-edison/%E5%B0%8F%E8%80%81%E9%BC%A0-edison--4/
 http://example.com/2022/10/01/%E4%B9%A6/%E5%B0%8F%E8%80%81%E9%BC%A0-edison/%E5%B0%8F%E8%80%81%E9%BC%A0-edison--1/
