@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/6-7-22-11-2/k7/</loc>
+    <loc>http://example.com/2022/08/12/hhu/hhu_machinelearning/vorlesung/2-22-10-13/k2/</loc>
+    
+    <lastmod>2022-11-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k3-4/</loc>
     
     <lastmod>2022-11-02</lastmod>
     
@@ -20,7 +29,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k5/</loc>
+    <loc>http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/6-7-22-11-2/k7/</loc>
     
     <lastmod>2022-11-02</lastmod>
     
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k3-4/</loc>
+    <loc>http://example.com/2022/11/02/hhu/hhu_machinelearning/vorlesung/4-22-10-19/k5/</loc>
     
     <lastmod>2022-11-02</lastmod>
     
