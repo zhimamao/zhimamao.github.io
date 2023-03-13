@@ -38,7 +38,7 @@
     "live2d-widget-model-koharu": "^1.0.5",
     "live2d-widget-model-tororo": "^1.0.5",
     "live2d-widget-model-wanko": "^1.0.5",
-    "node-fetch": "^3.2.10",
+    "node-fetch": "^3.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
